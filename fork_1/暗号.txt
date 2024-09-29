@@ -1,0 +1,38 @@
+import os
+
+# 获取当前文件夹名
+current_directory = os.getcwd()
+folder_name = os.path.basename(current_directory)
+
+# 要执行的CMD命令
+cmd_commands = [
+    f':: 获取当前文件夹名\nfor %%I in ("%%cd%%") do set "folder_name={folder_name}"',
+    f':: 使用当前文件夹名创建一个新的 GitHub 仓库\ngh repo create "{folder_name}" --public',
+    ':: 初始化一个新的 Git 仓库\ngit init',
+    f':: 将远程仓库添加为 origin\ngit remote add origin https://github.com/Republic1024/{folder_name}.git',
+    ':: 从远程仓库的 main 分支拉取最新代码\ngit pull origin main',
+    ':: 移除未跟踪的文件，例如 .DS_Store（Mac 系统生成的隐藏文件）\ndel /F /Q .DS_Store',
+    ':: 将所有更改添加到暂存区，排除 .pth 文件\ngit add .',
+    ':: 提交暂存区的更改并添加提交信息\ngit commit -m "Initial commit or merge or rebase remote changes"',
+    ':: 将本地的 main 分支变基到远程 main 分支的最新提交\ngit branch -M main',
+    ':: 将本地 main 分支的更改推送到远程 main 分支\ngit push -u origin main'
+]
+
+### 优化后的 Prompt (中文)：
+#
+# 将项目内容完整翻译为中文，并根据项目性质生成 README.md 文件，以教程或使用说明的形式【根据项目内容自动识别】，适用于 GitHub 项目。README.md 文件应包括：
+#
+# - **项目简介**：简要说明项目的目的、作用及应用场景。
+# - **环境要求**：列出所需的软件、工具及安装说明。
+# - **代码详解**：详细解释每一部分代码的功能、输入、输出、步骤，必要时进行逐步讲解。
+# - **运行示例**：提供运行代码的示例，展示执行步骤及结果输出。
+# - **命令行用法【如果说存在】**：若适用，展示在命令行下的使用方法及相关参数说明。
+# - **输出结果说明**：解析代码运行后的输出结果，解释其含义。
+#
+# 确保文档结构清晰，语言通顺，适合读者快速上手项目。
+
+# 将命令写入到run.bat文件
+with open("run.bat", "w", encoding="utf-8") as f:
+    f.write("\n\n".join(cmd_commands))
+
+print("run.bat 文件已生成！")
