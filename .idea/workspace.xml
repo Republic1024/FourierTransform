@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2780843c-4119-4377-a79d-3d333f4be8ff" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/main.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1727572502432</updated>
       <workItem from="1727572504091" duration="5992000" />
-      <workItem from="1727601311385" duration="442000" />
+      <workItem from="1727601311385" duration="751000" />
     </task>
     <servers />
   </component>
